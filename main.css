@@ -1,0 +1,188 @@
+:root {
+  --global-padding: calc(100vw * 0.05);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+/*Paddings & container general*/
+header, footer, aside, main {
+  padding: 0 var(--global-padding);
+}
+header section, footer section, aside section, main section {
+  padding: 2rem 0;
+  display: flex;
+  width: 100%;
+}
+
+/*separate styles*/
+body {
+  background: #fbfbfd;
+  display: grid;
+  transition: all 0.2s ease;
+  grid-template-areas: "header header header header" "aside main main main" "footer footer footer footer";
+}
+
+header {
+  z-index: 10;
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  position: fixed;
+  background: #fff;
+  grid-area: header;
+  align-items: stretch;
+  justify-content: center;
+  box-shadow: 0 0.25rem 1rem rgba(0, 0, 5, 0.1);
+}
+
+aside {
+  z-index: 1;
+  display: flex;
+  grid-area: aside;
+  position: relative;
+  background: rgba(251, 251, 253, 0.9);
+  backdrop-filter: blur(20px) saturate(150%);
+  box-shadow: inset 0 -0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+}
+aside section {
+  flex-flow: column nowrap;
+  row-gap: 1rem;
+}
+aside section .main-info {
+  display: inherit;
+  height: fit-content;
+  width: 100%;
+  column-gap: 1rem;
+}
+aside section .main-info .photo {
+  min-width: 10rem;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 5rem;
+  border: 1px solid white;
+  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.15);
+  background: #fff;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+aside section .main-info .photo img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+aside section .main-info .info {
+  flex-grow: 1;
+  max-width: 100%;
+  justify-content: center;
+  display: flex;
+  flex-flow: column;
+  row-gap: 0.5rem;
+}
+aside section .main-info .info .g-info {
+  display: flex;
+  flex-flow: column;
+  row-gap: 0.5rem;
+}
+aside section .main-info .info .g-info h2 {
+  text-transform: capitalize;
+  display: flex;
+}
+aside section .main-info .info .g-info h4 {
+  font-size: 1rem;
+  font-weight: 400;
+}
+aside section .main-info .info .socials {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+aside section .main-info .info .socials a {
+  display: flex;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  color: #424242;
+}
+aside section .main-info .info hr {
+  display: flex;
+  border: none;
+  background-color: #fff;
+  height: 1px;
+  margin: 0.5rem 0;
+}
+aside section .skill-section .skill-tags {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 0.5rem;
+  padding: 1rem 0;
+}
+aside section .skill-section .skill-tags .skill-item {
+  display: flex;
+  line-height: 1;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  background-color: #f1f1f1;
+  padding: 0.25rem 1rem;
+  column-gap: 0.2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+aside section .skill-section .skill-tags .skill-item s {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.1rem 0.25rem;
+  border-radius: 1rem;
+  color: #ccc;
+  font-size: 0.8rem;
+}
+aside section .skill-section .skill-tags .skill-item s:after {
+  content: "y";
+}
+aside section .contacts .contact-items {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+aside section .contacts .contact-items a {
+  display: flex;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  color: #424242;
+}
+
+main {
+  grid-area: main;
+}
+
+footer {
+  grid-area: footer;
+  background: #424242;
+}
+footer section {
+  color: #fff;
+  padding: 2rem 0;
+}
+
+.aside-bg {
+  grid-area: aside;
+  background: center center/cover no-repeat url("https://images.unsplash.com/photo-1611243017235-84454d0491aa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80");
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/*# sourceMappingURL=main.css.map */
