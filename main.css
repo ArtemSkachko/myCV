@@ -24,7 +24,7 @@ body {
   background: #fbfbfd;
   display: grid;
   transition: all 0.2s ease;
-  grid-template-areas: "header header header header" "aside main main main" "footer footer footer footer";
+  grid-template: "header header header " "aside main main " "footer footer footer"/1fr 1fr 1fr;
 }
 
 header {
@@ -50,118 +50,104 @@ aside {
   box-shadow: inset 0 -0.25rem 0.5rem rgba(0, 0, 0, 0.2);
 }
 aside section {
-  flex-flow: column nowrap;
   row-gap: 1rem;
+  flex-flow: column nowrap;
 }
 aside section .main-info {
-  display: inherit;
-  height: fit-content;
   width: 100%;
+  display: inherit;
   column-gap: 1rem;
+  height: fit-content;
 }
 aside section .main-info .photo {
-  min-width: 10rem;
   width: 10rem;
   height: 10rem;
-  border-radius: 5rem;
-  border: 1px solid white;
-  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.15);
+  display: flex;
+  min-width: 10rem;
   background: #fff;
   overflow: hidden;
-  display: flex;
-  justify-content: center;
+  border-radius: 5rem;
   align-items: center;
+  justify-content: center;
+  border: 1px solid white;
+  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.15);
 }
 aside section .main-info .photo img {
-  object-fit: cover;
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 aside section .main-info .info {
   flex-grow: 1;
-  max-width: 100%;
-  justify-content: center;
   display: flex;
-  flex-flow: column;
   row-gap: 0.5rem;
+  max-width: 100%;
+  flex-flow: column;
+  justify-content: center;
 }
 aside section .main-info .info .g-info {
   display: flex;
-  flex-flow: column;
   row-gap: 0.5rem;
+  flex-flow: column;
 }
 aside section .main-info .info .g-info h2 {
-  text-transform: capitalize;
   display: flex;
+  text-transform: capitalize;
 }
 aside section .main-info .info .g-info h4 {
   font-size: 1rem;
   font-weight: 400;
 }
-aside section .main-info .info .socials {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 1rem;
-}
-aside section .main-info .info .socials a {
-  display: flex;
-  text-decoration: none;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.5rem;
-  color: #424242;
-}
 aside section .main-info .info hr {
-  display: flex;
-  border: none;
-  background-color: #fff;
   height: 1px;
+  border: none;
+  display: flex;
   margin: 0.5rem 0;
+  background-color: #fff;
 }
 aside section .skill-section .skill-tags {
-  display: flex;
-  flex-flow: row wrap;
   gap: 0.5rem;
+  display: flex;
   padding: 1rem 0;
+  flex-flow: row wrap;
 }
 aside section .skill-section .skill-tags .skill-item {
   display: flex;
   line-height: 1;
-  justify-content: center;
+  column-gap: 0.2rem;
   align-items: center;
   border-radius: 1rem;
-  background-color: #f1f1f1;
   padding: 0.25rem 1rem;
-  column-gap: 0.2rem;
+  justify-content: center;
+  background-color: #f1f1f1;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 aside section .skill-section .skill-tags .skill-item s {
-  text-decoration: none;
+  color: #ccc;
   display: flex;
-  justify-content: center;
+  font-size: 0.8rem;
+  border-radius: 1rem;
   align-items: center;
   padding: 0.1rem 0.25rem;
-  border-radius: 1rem;
-  color: #ccc;
-  font-size: 0.8rem;
+  text-decoration: none;
+  justify-content: center;
 }
 aside section .skill-section .skill-tags .skill-item s:after {
   content: "y";
 }
-aside section .contacts .contact-items {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+aside section .contact-items, aside section .socials {
   gap: 1rem;
-}
-aside section .contacts .contact-items a {
   display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+aside section .contact-items a, aside section .socials a {
+  display: flex;
+  color: #424242;
+  font-size: 1.5rem;
+  align-items: center;
   text-decoration: none;
   justify-content: center;
-  align-items: center;
-  font-size: 1.5rem;
-  color: #424242;
 }
 
 main {
@@ -177,12 +163,13 @@ footer section {
   padding: 2rem 0;
 }
 
+/*tips & tricks*/
 .aside-bg {
-  grid-area: aside;
-  background: center center/cover no-repeat url("https://images.unsplash.com/photo-1611243017235-84454d0491aa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80");
+  z-index: 0;
   width: 100%;
   height: 100%;
-  z-index: 0;
+  grid-area: aside;
+  background: center center/cover no-repeat url("https://images.unsplash.com/photo-1611243017235-84454d0491aa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80");
 }
 
 /*# sourceMappingURL=main.css.map */

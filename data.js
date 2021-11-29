@@ -70,7 +70,6 @@ const data = {
         },
 
     },
-
     makeSocialLinks: (socials) => {
         let linksHTML = '';
         for(let item in socials){
@@ -88,7 +87,7 @@ const data = {
     makeContacts: (messengers) => {
         let messageRow = '';
         for(let item in messengers){
-            messageRow += `<a href="${messengers[item].href}"><i class="${messengers[item].iconClass}"></i></a>`;
+            messageRow += `<a href="${messengers[item].href}"><i class="${messengers[item].iconClass}"></i></a>`
         }
         return messageRow;
     },
