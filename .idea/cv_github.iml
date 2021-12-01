@@ -8,5 +8,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="all" level="application" />
+    <orderEntry type="library" name="duotone" level="application" />
+    <orderEntry type="library" name="fontawesome" level="application" />
   </component>
 </module>

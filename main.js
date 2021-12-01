@@ -5,11 +5,13 @@ window.addEventListener('DOMContentLoaded', () => {
     const main = d.querySelector('main');
     const aside = d.querySelector('aside');
     const header = d.querySelector('header');
-    // const footer = d.querySelector('footer');
+    const footer = d.querySelector('footer');
 
     /*make header padding*/
     aside.style.paddingTop = `${header.offsetHeight}px`;
     main.style.paddingTop = `${header.offsetHeight}px`;
+
+    /*Aside*/
 
     aside.querySelector('.photo').insertAdjacentHTML
     ('afterbegin', `<img src="${data.photoPath}" alt="myPhoto">`);
@@ -23,9 +25,14 @@ window.addEventListener('DOMContentLoaded', () => {
     aside.querySelector('.skill-tags').insertAdjacentHTML
     ('afterbegin', `${data.makeSkills(data.skills)}`);
 
-    aside.querySelector('.socials').insertAdjacentHTML
-    ('afterbegin',`${data.makeSocialLinks(data.socials)}`);
+    aside.querySelector('.hobby-tags').insertAdjacentHTML
+    ('beforeend', `${data.makeInterests(data.interests)}`);
 
     aside.querySelector('.contact-items').insertAdjacentHTML
     ('afterbegin',`${data.makeContacts(data.messengers)}`);
+
+    /*Footer*/
+
+    footer.querySelector('.socials').insertAdjacentHTML
+    ('afterbegin',`${data.makeSocialLinks(data.socials)}`);
 });
