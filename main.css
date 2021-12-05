@@ -92,6 +92,7 @@ aside section .main-info .info {
   max-width: 100%;
   flex-flow: column;
   justify-content: center;
+  padding: 1rem 0;
 }
 aside section .main-info .info .g-info {
   display: flex;
@@ -200,6 +201,53 @@ aside section .interests-section .hobby-tags .hobby-item:hover {
 
 main {
   grid-area: main;
+}
+main section {
+  flex-flow: column nowrap;
+}
+main section .myStory,
+main section .experience,
+main section .education {
+  color: #424242;
+  padding: 0 0 1.5rem 0;
+}
+main section .myStory h2,
+main section .experience h2,
+main section .education h2 {
+  color: #bbbbbb;
+  text-transform: uppercase;
+  padding: 1rem 0;
+}
+main section .myStory h4,
+main section .experience h4,
+main section .education h4 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  line-height: 1;
+}
+main section .myStory h4 span,
+main section .experience h4 span,
+main section .education h4 span {
+  background-color: #f1f1f1;
+  padding: 0.3rem 1rem;
+  border-radius: 1rem;
+  font-size: 0.8rem;
+}
+main section .myStory h5,
+main section .experience h5,
+main section .education h5 {
+  font-style: oblique;
+  padding: 0.3rem 0;
+}
+main section .myStory p,
+main section .experience p,
+main section .education p {
+  line-height: 1.5;
+}
+main section .experience p {
+  padding: 0.2rem 0 1rem 0;
+  font-size: 0.9rem;
 }
 
 footer {

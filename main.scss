@@ -103,6 +103,7 @@ aside {
         max-width: 100%;
         flex-flow: column;
         justify-content: center;
+        padding: 1rem 0;
 
         .g-info {
           display: flex;
@@ -240,6 +241,50 @@ aside {
 
 main {
   grid-area: main;
+
+  section{
+    flex-flow: column nowrap;
+
+    .myStory,
+    .experience,
+    .education{
+      color: #424242;
+      padding: 0 0 1.5rem 0;
+
+      h2{
+        color: #bbbbbb;
+        text-transform: uppercase;
+        padding: 1rem 0;
+      }
+      h4{
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        line-height: 1;
+        span{
+          background-color: #f1f1f1;
+          padding: .3rem 1rem;
+          border-radius: 1rem;
+          font-size: .8rem;
+        }
+      }
+      h5{
+        font-style: oblique;
+        padding: .3rem 0;
+      }
+      p{
+        line-height: 1.5;
+      }
+
+    }
+
+    .experience{
+      p{
+        padding: .2rem 0 1rem 0;
+        font-size: .9rem;
+      }
+    }
+  }
 
 }
 
