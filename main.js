@@ -35,6 +35,7 @@ window.addEventListener('DOMContentLoaded', () => {
     /*Main*/
     main.querySelector('.myStory').insertAdjacentHTML('beforeend',`${data.makeMyStory(data.about, data.name)}`);
     main.querySelector('.experience').insertAdjacentHTML('beforeend',`${data.makeWorkExperience(data.experience)}`);
+    main.querySelector('.education').insertAdjacentHTML('beforeend',`${data.makeEducation(data.education)}`);
     /*Footer*/
 
     footer.querySelector('.socials').insertAdjacentHTML

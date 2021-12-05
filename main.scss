@@ -55,6 +55,12 @@ aside {
   section {
     row-gap: 1rem;
     flex-flow: column nowrap;
+    height: 50vh; /*fix this*/
+    position: sticky;
+    top: 10vh; /*fix this*/
+
+
+
     /**/
     .skill-section,
     .interests-section {
@@ -266,6 +272,9 @@ main {
           padding: .3rem 1rem;
           border-radius: 1rem;
           font-size: .8rem;
+          display: flex;
+          align-items: center;
+          font-weight: normal;
         }
       }
       h5{
@@ -275,7 +284,6 @@ main {
       p{
         line-height: 1.5;
       }
-
     }
 
     .experience{
@@ -284,8 +292,36 @@ main {
         font-size: .9rem;
       }
     }
-  }
+    .education{
+      display: flex;
+      flex-flow: column nowrap;
+      gap: 1rem;
 
+      .eduItem{
+        color: #424242;
+
+        h5{
+          font-weight: normal;
+          padding: .8rem 0;
+          display: flex;
+          align-items: center;
+          gap: .5rem;
+          font-style: normal;
+
+          span{
+            font-weight: bold;
+          }
+          hr{
+            height: 1rem;
+            border: none;
+            background: #ccc;
+            width: 1px;
+          }
+        }
+      }
+    }
+
+  }
 }
 
 footer {

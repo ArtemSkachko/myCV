@@ -52,6 +52,11 @@ aside {
 aside section {
   row-gap: 1rem;
   flex-flow: column nowrap;
+  height: 50vh;
+  /*fix this*/
+  position: sticky;
+  top: 10vh;
+  /*fix this*/
   /**/
   /**/
 }
@@ -233,6 +238,9 @@ main section .education h4 span {
   padding: 0.3rem 1rem;
   border-radius: 1rem;
   font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  font-weight: normal;
 }
 main section .myStory h5,
 main section .experience h5,
@@ -248,6 +256,31 @@ main section .education p {
 main section .experience p {
   padding: 0.2rem 0 1rem 0;
   font-size: 0.9rem;
+}
+main section .education {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+}
+main section .education .eduItem {
+  color: #424242;
+}
+main section .education .eduItem h5 {
+  font-weight: normal;
+  padding: 0.8rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-style: normal;
+}
+main section .education .eduItem h5 span {
+  font-weight: bold;
+}
+main section .education .eduItem h5 hr {
+  height: 1rem;
+  border: none;
+  background: #ccc;
+  width: 1px;
 }
 
 footer {

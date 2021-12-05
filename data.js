@@ -131,7 +131,7 @@ const data = {
         {
             period: ['2008', '2009'],
             workNow: false,
-            companyName: `OJSC 'Privat Bank'`,
+            companyName: `'Privat Bank' OJSC`,
             position: `Expert of the direction "Car on credit"`,
             description: `Advice to clients regarding bank products, initial assessment of solvency for making a decision on granting a loan, 
             preparation, verification and signing of loan agreements, verification of collateral, work with problem debts.`,
@@ -139,7 +139,7 @@ const data = {
         {
             period: ['2010', '2011'],
             workNow: false,
-            companyName: `OJSC 'Foxtrot`,
+            companyName: `'Foxtrot' OJSC`,
             position: `Sales assistant (digital goods & computers)`,
             description: `Acceptance, registration of goods at the warehouse.
             Unpacking, initial setup and display of goods on showcases.
@@ -148,14 +148,14 @@ const data = {
         {
             period: ['2011', '2012'],
             workNow: false,
-            companyName: `OJSC 'Delta Bank'`,
+            companyName: `'Delta Bank' OJSC`,
             position: `loan officer ()`,
             description: `Advising on the services provided by the bank, assessing the creditworthiness, drawing up loan agreements, working with problem debts.`,
         },
         {
             period: ['2012', '2021'],
             workNow: true,
-            companyName: `LLC 'MIS'`,
+            companyName: `'MIS' LLC`,
             position: `Expert in assessing the value of property and property rights`,
             description: `Practical activities in the field of independent appraisal of the value of property and property rights.
             Working with government agencies on the assessment of the value and sale of property that is in tax lien, as well as in judicial rehabilitation and liquidation procedures`,
@@ -195,19 +195,23 @@ const data = {
                 name: `Donetsk Polytechnic College`,
                 specialization: `Finance and credit`,
                 qualification: `Junior Specialist`,
-                duration: `2003 - 2006`
+                period: ['2003','2006']
             },
             {
                 name: `Mykhailo Tuhan-Baranovskyi Donetsk National University of Economics and Trade`,
-                specialization: `Finance and credit`,
-                qualification: `Finance and credit professional`,
-                duration: `2006 - 2009`
+                specialization: `Accounting and Auditing`,
+                qualification: `Accounting and Auditing professional`,
+                period: ['2006','2009']
             }
         ],
-        additional: {
+        additional: [
+            {
             name: `Course`,
             duration: `2011-2012`
-        },
+            },
+
+
+        ],
     },
     makeMyStory: (about, name) => {
         let storyBody = '<h2>My short story</h2>';
@@ -260,6 +264,30 @@ const data = {
                                 <p>${item.description}</p>`
         })
         return experienceItems;
+
+    },
+    makeEducation: (education) => {
+        let eduRow = `<h3>Basic</h3>`;
+        let sortedItems = education.basic.sort(function (a,b){
+            if(a.period[1] < b.period[1]){return 1;}
+            if (a.period[1] > b.period[1]) {return -1;}
+        });
+        sortedItems.forEach(item => {
+            eduRow +=
+                `<div class="eduItem">
+                    <h4>
+                        ${item.name} <span>${item.period[0]} - ${item.period[1]}</span>
+                    </h4>
+                    <h5>
+                        <span>Specialization:</span> ${item.specialization}
+                        <hr>
+                        <span>Qualification:</span> ${item.qualification}
+                    </h5>
+                </div>`
+        })
+
+
+        return eduRow;
 
     },
 }
