@@ -1,3 +1,4 @@
+const currentDate = new Date()
 const data = {
     name: {
         firstName: 'artem',
@@ -137,7 +138,7 @@ const data = {
             preparation, verification and signing of loan agreements, verification of collateral, work with problem debts.`,
         },
         {
-            period: ['2010', '2011'],
+            period: ['2010', '2011', new Date().toISOString()],
             workNow: false,
             companyName: `'Foxtrot' OJSC`,
             position: `Sales assistant (digital goods & computers)`,
@@ -290,4 +291,5 @@ const data = {
         return eduRow;
 
     },
+
 }
