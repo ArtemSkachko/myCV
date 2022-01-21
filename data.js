@@ -150,7 +150,7 @@ const data = {
             period: ['2011', '2012'],
             workNow: false,
             companyName: `'Delta Bank' OJSC`,
-            position: `loan officer ()`,
+            position: `loan officer`,
             description: `Advising on the services provided by the bank, assessing the creditworthiness, drawing up loan agreements, working with problem debts.`,
         },
         {
