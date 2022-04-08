@@ -1,27 +1,29 @@
 window.addEventListener('DOMContentLoaded', () => {
 
-
     /*catch general sections*/
-    const d = document;
-    const main = d.querySelector('main');
-    const aside = d.querySelector('aside');
-    const header = d.querySelector('header');
-    const footer = d.querySelector('footer');
+    const
+        d = document,
+        main = d.querySelector('main'),
+        aside = d.querySelector('aside'),
+        header = d.querySelector('header'),
+        footer = d.querySelector('footer');
 
     /*make header padding*/
-    aside.style.paddingTop = `${header.offsetHeight}px`;
-    main.style.paddingTop = `${header.offsetHeight}px`;
+    aside.style.paddingTop = main.style.paddingTop =`${header.offsetHeight}px`;
+
+header.querySelector('.head-name')
+    .insertAdjacentHTML("afterbegin", `${data.name.firstName} ${data.name.lastName}`)
+
 
     /*Aside*/
-
     aside.querySelector('.photo').insertAdjacentHTML
     ('afterbegin', `<img src="${data.photoPath}" alt="myPhoto">`);
 
-    aside.querySelector('.g-info').insertAdjacentHTML
-    ('afterbegin',`<h2>${data.name.firstName} ${data.name.lastName}</h2>`);
+    // aside.querySelector('.g-info').insertAdjacentHTML
+    // ('afterbegin', `<h2>${data.name.firstName} ${data.name.lastName}</h2>`);
 
-    aside.querySelector('.g-info').insertAdjacentHTML
-    ('beforeend',`<h4>${data.position.join(', ')}</h4>`);
+    header.querySelector('.g-info').insertAdjacentHTML
+    ('beforeend', `<h4>${data.position.map(item =>`<span>${item}</span>`).join('•')}</h4>`);
 
     aside.querySelector('.skill-tags').insertAdjacentHTML
     ('afterbegin', `${data.makeSkills(data.skills)}`);
@@ -30,14 +32,14 @@ window.addEventListener('DOMContentLoaded', () => {
     ('beforeend', `${data.makeInterests(data.interests)}`);
 
     aside.querySelector('.contact-items').insertAdjacentHTML
-    ('afterbegin',`${data.makeContacts(data.messengers)}`);
+    ('afterbegin', `${data.makeContacts(data.messengers)}`);
 
     /*Main*/
-    main.querySelector('.myStory').insertAdjacentHTML('beforeend',`${data.makeMyStory(data.about, data.name)}`);
-    main.querySelector('.experience').insertAdjacentHTML('beforeend',`${data.makeWorkExperience(data.experience)}`);
-    main.querySelector('.education').insertAdjacentHTML('beforeend',`${data.makeEducation(data.education)}`);
+    main.querySelector('.myStory').insertAdjacentHTML('beforeend', `${data.makeMyStory(data.about, data.name)}`);
+    main.querySelector('.experience').insertAdjacentHTML('beforeend', `${data.makeWorkExperience(data.experience)}`);
+    main.querySelector('.education').insertAdjacentHTML('beforeend', `${data.makeEducation(data.education)}`);
     /*Footer*/
 
     footer.querySelector('.socials').insertAdjacentHTML
-    ('afterbegin',`${data.makeSocialLinks(data.socials)}`);
+    ('afterbegin', `${data.makeSocialLinks(data.socials)}`);
 });

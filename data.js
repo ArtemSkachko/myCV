@@ -7,7 +7,7 @@ const data = {
     gender: 'male',
     age: '33',
     photoPath: 'img/myPhoto.png',
-    position: ['designer', 'front-end developer'],
+    position: ['designer', 'front-end developer', 'manager'],
     phone: {
         mobile: '+380991153048'
     },
@@ -251,7 +251,6 @@ const data = {
             InterestsRow += `<span class="hobby-item">${item}</span>`
         });
         return InterestsRow;
-
     },
     makeWorkExperience: (experience) => {
         let experienceItems = '';
@@ -287,9 +286,7 @@ const data = {
                 </div>`
         })
 
-
         return eduRow;
-
     },
 
 }
