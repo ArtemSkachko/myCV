@@ -4,6 +4,10 @@ const data = {
         firstName: 'artem',
         lastName: 'skachko'
     },
+    about: "So, a little about me. <br> First of all, I am a cheerful person who loves to learn something new every day. I have over 10 years of experience in design (including DIY, printing, web design and interface development), so I am ready to provide design services in almost any direction." +
+        "For the last 4 years my interests have shifted more to the field of web development, so I can say that I am a professional master of html, css, JavaScript. But, everything is a little more complicated :) " +
+        "To these technical skills, it is also worth adding that I am at the same time a certified expert in the assessment of property and property rights, as well as a certified arbitration manager (liquidator, reorganization manager, property manager), respectively, having a higher financial education." +
+        "At the moment I am the head of the development and design department of a large outstaffing company, the number of employees of which is about 300 people. In addition to managing the department, today I perform many other functions, such as mentoring, interviewing new candidates, project management, maintaining and administering the company's own server and much more.",
     gender: 'male',
     age: '33',
     photoPath: 'img/myPhoto.png',
@@ -28,7 +32,7 @@ const data = {
             name: 'Figma',
             experience: 3,
         },
-        uxui: {
+        ux_ui: {
             name: 'UX/UI',
             experience: 3,
         },
@@ -72,8 +76,12 @@ const data = {
             name: 'Property evaluation',
             experience: 8,
         },
+        ajax: {
+            name: 'AJAX',
+            experience: 1,
+        },
     },
-    interests: ['DIY', 'design trends', 'management'],
+    interests: ['DIY', 'design trends', 'management', 'programming', 'robots'],
     socials: {
         linkedin: {
             iconClass: 'fab fa-linkedin',
@@ -104,22 +112,6 @@ const data = {
         },
 
     },
-    about: [
-        `So, a little about me.`,
-        `first of all, I am a cheerful person who loves to learn something new every day. 
-        I have over 10 years of experience in design (including DIY, printing, web design and interface development), 
-        so I am ready to provide design services in almost any direction.`,
-        `For the last 4 years my interests have shifted more to the field of web development, 
-        so I can say that I am a professional master of html, css, JavaScript.
-        But, everything is a little more complicated :)`,
-        `To these technical skills, it is also worth adding that I am at the same time a certified expert 
-        in the assessment of property and property rights, as well as a certified arbitration manager 
-        (liquidator, reorganization manager, property manager), respectively, having a higher financial education.`,
-        `At the moment I am the head of the development and design department of a large outstaffing company, 
-        the number of employees of which is about 300 people. In addition to managing the department, 
-        today I perform many other functions, such as mentoring, interviewing new candidates, project management, 
-        maintaining and administering the company's own server and much more.`,
-    ],
     experience: [
         {
             period: ['2003', '2006'],
@@ -192,38 +184,33 @@ const data = {
     ],
     education: {
         basic: [
-            {
-                name: `Donetsk Polytechnic College`,
-                specialization: `Finance and credit`,
-                qualification: `Junior Specialist`,
-                period: ['2003','2006']
-            },
+            // {
+            //     name: `Donetsk Polytechnic College`,
+            //     specialization: `Finance and credit`,
+            //     qualification: `Junior Specialist`,
+            //     period: ['2003', '2006']
+            // },
             {
                 name: `Mykhailo Tuhan-Baranovskyi Donetsk National University of Economics and Trade`,
                 specialization: `Accounting and Auditing`,
                 qualification: `Accounting and Auditing professional`,
-                period: ['2006','2009']
+                period: ['2006', '2009']
             }
         ],
         additional: [
             {
-            name: `Course`,
-            duration: `2011-2012`
+                name: `Accredited Property Appraiser`,
+                period: ['2012', '2022'],
+                certification: 'State Property Fund of Ukraine, Ukrainian Society of Appraisers',
             },
-
-
+            {
+                name: `Arbitration Manager (property manager, managing of readjustment, liquidation).`,
+                period: ['2014', '2017'],
+                certification: 'Ministry of Justice of Ukraine (2017)',
+            },
         ],
     },
-    makeMyStory: (about, name) => {
-        let storyBody = '<h2>My short story</h2>';
-        if(about.length > 0){
-            about.forEach(item => storyBody += `<p>${item}</p>`);
-            return storyBody;
-        }else {
-            return storyBody = `${name.firstName[0].toUpperCase() + name.firstName.slice(1)}, 
-           you need to write your short story!`
-        }
-    },
+    makeMyStory: (about) => about ? `<h2>My short story</h2> <p>${about}</p>` : '',
     makeContacts: (messengers) => {
         let messageRow = '';
         for (let item in messengers) {
@@ -254,9 +241,13 @@ const data = {
     },
     makeWorkExperience: (experience) => {
         let experienceItems = '';
-        let sortedItems = experience.sort(function (a,b){
-            if(a.period[1] < b.period[1]){return 1;}
-            if (a.period[1] > b.period[1]) {return -1;}
+        let sortedItems = experience.sort(function (a, b) {
+            if (a.period[1] < b.period[1]) {
+                return 1;
+            }
+            if (a.period[1] > b.period[1]) {
+                return -1;
+            }
         });
         sortedItems.forEach(item => {
             experienceItems += `<h4>${item.companyName} <span>${item.period[0]} - ${item.workNow === true ? 'now' : item.period[1]}</span></h4>
@@ -268,9 +259,13 @@ const data = {
     },
     makeEducation: (education) => {
         let eduRow = `<h3>Basic</h3>`;
-        let sortedItems = education.basic.sort(function (a,b){
-            if(a.period[1] < b.period[1]){return 1;}
-            if (a.period[1] > b.period[1]) {return -1;}
+        let sortedItems = education.basic.sort(function (a, b) {
+            if (a.period[1] < b.period[1]) {
+                return 1;
+            }
+            if (a.period[1] > b.period[1]) {
+                return -1;
+            }
         });
         sortedItems.forEach(item => {
             eduRow +=
@@ -279,13 +274,24 @@ const data = {
                         ${item.name} <span>${item.period[0]} - ${item.period[1]}</span>
                     </h4>
                     <h5>
-                        <span>Specialization:</span> ${item.specialization}
-                        <hr>
-                        <span>Qualification:</span> ${item.qualification}
+                        <span>Certification:</span> ${item.qualification}
                     </h5>
                 </div>`
         })
 
+        let additional = `${education.additional
+            ? `<h3>Additional</h3> ${education.additional.map(item =>
+                `<div class="eduItem">
+                    <h4>
+                        ${item.name} <span>${item.period[0]} - ${item.period[1]}</span>
+                    </h4>
+                    <h5>
+                        <span>Certification:</span> ${item.certification}
+                    </h5>
+                </div>`).join('')}`
+            : ``
+        }`
+        eduRow += additional;
         return eduRow;
     },
 
