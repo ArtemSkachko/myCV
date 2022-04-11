@@ -21,7 +21,7 @@ const data = {
             experience: 7,
         },
         illustrator: {
-            name: 'Illustrator Ai',
+            name: 'Illustrator (Ai)',
             experience: 5,
         },
         indesign: {
@@ -81,7 +81,7 @@ const data = {
             experience: 1,
         },
     },
-    interests: ['DIY', 'design trends', 'management', 'programming', 'robots'],
+    interests: ['DIY', 'design trends', 'management', 'programming', 'robots', 'data analysis'],
     socials: {
         linkedin: {
             iconClass: 'fab fa-linkedin',
