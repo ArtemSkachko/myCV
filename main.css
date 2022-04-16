@@ -14,7 +14,7 @@ html {
   scrollbar-width: thin;
 }
 html::-webkit-scrollbar {
-  width: 1vw;
+  width: 0.5rem;
 }
 html::-webkit-scrollbar-thumb {
   background-color: var(--main-bg);
