@@ -45,6 +45,7 @@ header section, footer section, aside section, main section {
   width: 100%;
 }
 
+/*Additional styles*/
 header {
   z-index: 10;
   width: 100%;
@@ -103,8 +104,11 @@ aside section {
   flex-flow: column nowrap;
   /**/
   /**/
+  /**/
+  /**/
 }
 aside section .skill-section h3,
+aside section .lang_section h3,
 aside section .interests-section h3 {
   display: flex;
   padding: 0 0 0 0;
@@ -158,13 +162,23 @@ aside section .main-info .info .contact-items a {
   text-decoration: none;
   justify-content: center;
 }
-aside section .skill-section .skill-tags {
+aside section .skill-section .skill-tags,
+aside section .skill-section .lang-tags,
+aside section .lang_section .skill-tags,
+aside section .lang_section .lang-tags {
   gap: 0.5rem;
   display: flex;
   padding: 1rem 0;
   flex-flow: row wrap;
 }
-aside section .skill-section .skill-tags .skill-item {
+aside section .skill-section .skill-tags .skill-item,
+aside section .skill-section .skill-tags .lang-item,
+aside section .skill-section .lang-tags .skill-item,
+aside section .skill-section .lang-tags .lang-item,
+aside section .lang_section .skill-tags .skill-item,
+aside section .lang_section .skill-tags .lang-item,
+aside section .lang_section .lang-tags .skill-item,
+aside section .lang_section .lang-tags .lang-item {
   color: #f1f1f1;
   display: flex;
   line-height: 1;
@@ -182,7 +196,14 @@ aside section .skill-section .skill-tags .skill-item {
   transition: all 0.15s ease;
   cursor: pointer;
 }
-aside section .skill-section .skill-tags .skill-item s {
+aside section .skill-section .skill-tags .skill-item s,
+aside section .skill-section .skill-tags .lang-item s,
+aside section .skill-section .lang-tags .skill-item s,
+aside section .skill-section .lang-tags .lang-item s,
+aside section .lang_section .skill-tags .skill-item s,
+aside section .lang_section .skill-tags .lang-item s,
+aside section .lang_section .lang-tags .skill-item s,
+aside section .lang_section .lang-tags .lang-item s {
   color: #424242;
   display: inherit;
   font-size: 0.8rem;
@@ -192,14 +213,41 @@ aside section .skill-section .skill-tags .skill-item s {
   text-decoration: none;
   justify-content: center;
 }
-aside section .skill-section .skill-tags .skill-item s:after {
+aside section .skill-section .skill-tags .skill-item s:after,
+aside section .skill-section .skill-tags .lang-item s:after,
+aside section .skill-section .lang-tags .skill-item s:after,
+aside section .skill-section .lang-tags .lang-item s:after,
+aside section .lang_section .skill-tags .skill-item s:after,
+aside section .lang_section .skill-tags .lang-item s:after,
+aside section .lang_section .lang-tags .skill-item s:after,
+aside section .lang_section .lang-tags .lang-item s:after {
   content: "y";
 }
-aside section .skill-section .skill-tags .skill-item:hover {
+aside section .skill-section .skill-tags .skill-item:hover,
+aside section .skill-section .skill-tags .lang-item:hover,
+aside section .skill-section .lang-tags .skill-item:hover,
+aside section .skill-section .lang-tags .lang-item:hover,
+aside section .lang_section .skill-tags .skill-item:hover,
+aside section .lang_section .skill-tags .lang-item:hover,
+aside section .lang_section .lang-tags .skill-item:hover,
+aside section .lang_section .lang-tags .lang-item:hover {
   box-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.08);
 }
-aside section .skill-section .skill-tags .skill-item:hover s {
+aside section .skill-section .skill-tags .skill-item:hover s,
+aside section .skill-section .skill-tags .lang-item:hover s,
+aside section .skill-section .lang-tags .skill-item:hover s,
+aside section .skill-section .lang-tags .lang-item:hover s,
+aside section .lang_section .skill-tags .skill-item:hover s,
+aside section .lang_section .skill-tags .lang-item:hover s,
+aside section .lang_section .lang-tags .skill-item:hover s,
+aside section .lang_section .lang-tags .lang-item:hover s {
   color: #aaa;
+}
+aside section .skill-section .skill-tags .lang-item s:after,
+aside section .skill-section .lang-tags .lang-item s:after,
+aside section .lang_section .skill-tags .lang-item s:after,
+aside section .lang_section .lang-tags .lang-item s:after {
+  content: "";
 }
 aside section .interests-section .hobby-tags {
   gap: 0.5rem;

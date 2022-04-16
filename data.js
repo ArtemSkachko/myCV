@@ -16,6 +16,22 @@ const data = {
         mobile: '+380991153048'
     },
     skills: {
+        html: {
+            name: 'HTML',
+            experience: 5,
+        },
+        css: {
+            name: 'css',
+            experience: 5,
+        },
+        javaScript: {
+            name: 'javaScript',
+            experience: 2,
+        },
+        sass_less: {
+            name: 'SASS/LESS',
+            experience: 3,
+        },
         photoshop: {
             name: 'Photoshop (Ps)',
             experience: 7,
@@ -40,25 +56,9 @@ const data = {
             name: 'Google material',
             experience: 3,
         },
-        html: {
-            name: 'HTML',
-            experience: 5,
-        },
-        css: {
-            name: 'css',
-            experience: 5,
-        },
-        sass_less: {
-            name: 'SASS/LESS',
-            experience: 3,
-        },
         git: {
             name: 'Git',
             experience: 3,
-        },
-        javaScript: {
-            name: 'javaScript',
-            experience: 2,
         },
         agile: {
             name: 'Agile',
@@ -72,13 +72,33 @@ const data = {
             name: 'Tilda',
             experience: 2,
         },
+        ajax: {
+            name: 'AJAX',
+            experience: 1,
+        },
         propertyEvaluation: {
             name: 'Property evaluation',
             experience: 8,
         },
-        ajax: {
-            name: 'AJAX',
-            experience: 1,
+        team_management: {
+            name: 'Team management',
+            experience: 2,
+        },
+        planning: {
+            name: 'Planning',
+            experience: 2,
+        },
+        risks_management: {
+            name: 'Risks management',
+            experience: 8,
+        },
+        project_management: {
+            name: 'Project management',
+            experience: 2,
+        },
+        problem_solving: {
+            name: 'Problem solving',
+            experience: 8,
         },
     },
     interests: ['DIY', 'design trends', 'management', 'programming', 'robots', 'data analysis'],
@@ -200,7 +220,7 @@ const data = {
         additional: [
             {
                 name: `Accredited Property Appraiser`,
-                period: ['2012', '2022'],
+                period: ['2012', '2012'],
                 certification: 'State Property Fund of Ukraine, Ukrainian Society of Appraisers',
             },
             {
@@ -209,6 +229,20 @@ const data = {
                 certification: 'Ministry of Justice of Ukraine (2017)',
             },
         ],
+    },
+    languages:{
+        english: {
+            name: 'English',
+            level: 'B2',
+        },
+        ukrainian: {
+            name: 'Ukrainian',
+            level: 'С2',
+        },
+        russian: {
+            name: 'Russian',
+            level: 'С2',
+        },
     },
     makeMyStory: (about) => about ? `<h2>My short story</h2> <p>${about}</p>` : '',
     makeContacts: (messengers) => {
@@ -224,6 +258,13 @@ const data = {
             linksHTML += `<a href="${socials[item].href}"><i class="${socials[item].iconClass}"></i></a>`
         }
         return linksHTML;
+    },
+    makeLanguages: (languages) => {
+        let langRow = '';
+        for(let item in languages){
+            langRow += `<span class="lang-item">${languages[item].name}<s>${languages[item].level}</s></span>`
+        }
+        return langRow;
     },
     makeSkills: (skills) => {
         let skillsRow = '';
