@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 :root {
   --global-padding: calc(100vw * 0.05);
   --main-bg: rgba(0, 0, 0, .62);
@@ -186,7 +187,7 @@ aside section .lang_section .lang-tags .lang-item {
   column-gap: 0.3rem;
   align-items: center;
   border-radius: 1rem;
-  padding: 0.3rem 0.7rem;
+  padding: 0.35rem 0.7rem;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.5);
   border-top-color: #fff;
@@ -195,6 +196,8 @@ aside section .lang_section .lang-tags .lang-item {
   border-right-color: #bbb;
   transition: all 0.15s ease;
   cursor: pointer;
+  font-weight: 200;
+  font-family: "Fira Sans Condensed", sans-serif;
 }
 aside section .skill-section .skill-tags .skill-item s,
 aside section .skill-section .skill-tags .lang-item s,
@@ -206,7 +209,7 @@ aside section .lang_section .lang-tags .skill-item s,
 aside section .lang_section .lang-tags .lang-item s {
   color: #424242;
   display: inherit;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   border-radius: 1rem;
   align-items: center;
   padding: 0.1rem 0.25rem;
@@ -243,6 +246,12 @@ aside section .lang_section .lang-tags .skill-item:hover s,
 aside section .lang_section .lang-tags .lang-item:hover s {
   color: #aaa;
 }
+aside section .skill-section .skill-tags .lang-item s,
+aside section .skill-section .lang-tags .lang-item s,
+aside section .lang_section .skill-tags .lang-item s,
+aside section .lang_section .lang-tags .lang-item s {
+  line-height: 1;
+}
 aside section .skill-section .skill-tags .lang-item s:after,
 aside section .skill-section .lang-tags .lang-item s:after,
 aside section .lang_section .skill-tags .lang-item s:after,
@@ -272,6 +281,8 @@ aside section .interests-section .hobby-tags .hobby-item {
   border-right-color: #bbb;
   transition: all 0.15s ease;
   cursor: pointer;
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 200;
 }
 aside section .interests-section .hobby-tags .hobby-item:hover {
   box-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.08);
