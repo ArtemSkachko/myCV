@@ -1,20 +1,25 @@
 const currentDate = new Date()
 const data = {
+    age: '33',
+    photoPath: 'img/myPhoto.png',
+    gender: 'male',
     name: {
         firstName: 'artem',
         lastName: 'skachko',
     },
-    about: "So, a little about me. <br> First of all, I am a cheerful person who loves to learn something new every day. I have over 10 years of experience in design (including DIY, printing, web design and interface development), so I am ready to provide design services in almost any direction." +
-        "For the last 4 years my interests have shifted more to the field of web development, so I can say that I am a professional master of html, css, JavaScript. But, everything is a little more complicated :) " +
-        "To these technical skills, it is also worth adding that I am at the same time a certified expert in the assessment of property and property rights, as well as a certified arbitration manager (liquidator, reorganization manager, property manager), respectively, having a higher financial education." +
-        "At the moment I am the head of the development and design department of a large outstaffing company, the number of employees of which is about 300 people. In addition to managing the department, today I perform many other functions, such as mentoring, interviewing new candidates, project management, maintaining and administering the company's own server and much more.",
-    gender: 'male',
-    age: '33',
-    photoPath: 'img/myPhoto.png',
-    position: [
-        'designer',
-        'front-end developer',
-        'manager'
+    about: [
+        `So, a little about me. <br>`,
+        `First of all, I am a cheerful person who loves to learn something new every day.`,
+        `I have over 10 years of experience in design (including DIY, printing, web design and interface development),`,
+        `so I am ready to provide design services in almost any direction.`,
+        `For the last 4 years my interests have shifted more to the field of web development,`,
+        `so I can say that I am a professional master of html, css, JavaScript. But, everything is a little more complicated :)`,
+        `To these technical skills, it is also worth adding that I am at the same time a certified expert in the assessment of property and property rights,`,
+        `as well as a certified arbitration manager (liquidator, reorganization manager, property manager), respectively, having a higher financial education.`,
+        `At the moment I am the head of the development and design department of a large outstaffing company,`,
+        `the number of employees of which is about 300 people. In addition to managing the department,`,
+        `today I perform many other functions, such as mentoring, interviewing new candidates, project management,`,
+        `maintaining and administering the company's own server and much more.`,
     ],
     phone: [
         '+380991153048',
@@ -105,14 +110,6 @@ const data = {
             experience: 8,
         },
     ],
-    interests: [
-        'DIY',
-        'design trends',
-        'management',
-        'programming',
-        'robots',
-        'data analysis'
-    ],
     socials: [
         {
             iconClass: 'fab fa-linkedin',
@@ -126,6 +123,61 @@ const data = {
             iconClass: 'fab fa-facebook',
             href: 'https://facebook.com',
         }
+    ],
+    position: [
+        'designer',
+        'front-end developer',
+        'manager'
+    ],
+    education: {
+        basic: [
+            {
+                name: `Mykhailo Tuhan-Baranovskyi Donetsk National University of Economics and Trade`,
+                specialization: `Accounting and Auditing`,
+                qualification: `Accounting and Auditing professional`,
+                period: ['2006', '2009']
+            },
+            {
+                name: `Donetsk Polytechnic College`,
+                specialization: `Finance and credit`,
+                qualification: `Junior Specialist`,
+                period: ['2003', '2006']
+            },
+        ],
+        additional: [
+            {
+                name: `Accredited Property Appraiser`,
+                period: ['2012', '2012'],
+                certification: 'State Property Fund of Ukraine, Ukrainian Society of Appraisers',
+            },
+            {
+                name: `Arbitration Manager (property manager, managing of readjustment, liquidation).`,
+                period: ['2014', '2017'],
+                certification: 'Ministry of Justice of Ukraine (2017)',
+            },
+        ],
+    },
+    languages: [
+        {
+            name: 'English',
+            level: 'B2',
+        },
+        {
+            name: 'Ukrainian',
+            level: 'С2',
+        },
+        {
+            name: 'Russian',
+            level: 'С2',
+        },
+    ],
+    interests: [
+        'DIY',
+        'design trends',
+        'management',
+        'programming',
+        'robots',
+        'data analysis'
     ],
     messengers: [
         {
@@ -211,76 +263,29 @@ const data = {
             Maintenance and optimization of large client resources, including migrations, backup and data recovery`,
         },
     ],
-    education: {
-        basic: [
-            {
-                name: `Mykhailo Tuhan-Baranovskyi Donetsk National University of Economics and Trade`,
-                specialization: `Accounting and Auditing`,
-                qualification: `Accounting and Auditing professional`,
-                period: ['2006', '2009']
-            },
-            {
-                name: `Donetsk Polytechnic College`,
-                specialization: `Finance and credit`,
-                qualification: `Junior Specialist`,
-                period: ['2003', '2006']
-            },
-        ],
-        additional: [
-            {
-                name: `Accredited Property Appraiser`,
-                period: ['2012', '2012'],
-                certification: 'State Property Fund of Ukraine, Ukrainian Society of Appraisers',
-            },
-            {
-                name: `Arbitration Manager (property manager, managing of readjustment, liquidation).`,
-                period: ['2014', '2017'],
-                certification: 'Ministry of Justice of Ukraine (2017)',
-            },
-        ],
-    },
-    languages: [
-        {
-            name: 'English',
-            level: 'B2',
-        },
-        {
-            name: 'Ukrainian',
-            level: 'С2',
-        },
-        {
-            name: 'Russian',
-            level: 'С2',
-        },
-    ],
 
     makeMyStory() {
-        return this.about ? `<h2>My short story</h2> <p>${this.about}</p>` : ''
+        return this.about ? `<h2>My short story</h2> <p>${this.about.map(item => `${item} `).join(' ')}</p>` : '';
     },
     makeContacts() {
         return this.messengers.map
-        (item => `<a href="${item.href}"><i class="${item.iconClass}"></i></a>`)
-            .join('');
+        (item => `<a href="${item.href}"><i class="${item.iconClass}"></i></a>`).join('');
     },
     makeSocialLinks() {
         return this.socials.map
-        (item => `<a href="${item.href}"><i class="${item.iconClass}"></i></a>`)
-            .join('');
+        (item => `<a href="${item.href}"><i class="${item.iconClass}"></i></a>`).join('');
     },
     makeLanguages() {
         return this.languages.map
-        (item => `<span class="lang-item">${item.name}<s>${item.level}</s></span>`)
-            .join('');
+        (item => `<span class="lang-item">${item.name}<s>${item.level}</s></span>`).join('');
     },
     makeSkills() {
         return this.skills.map
-        (item => `<span class="skill-item">${item.name}<s>${item.experience.toString()}</s></span>`)
-            .join('');
+        (item => `<span class="skill-item">${item.name}<s>${item.experience.toString()}</s></span>`).join('');
     },
     makeInterests() {
         return this.interests.map
-        (item => `<span class="hobby-item">${item}</span>`)
-            .join('');
+        (item => `<span class="hobby-item">${item}</span>`).join('');
     },
     makeWorkExperience() {
         let experienceItems = '';
